@@ -21,7 +21,6 @@ def webhook():
         bot.sendMessage(chat_id, "Привет! Я бот-модератор.")
     
     elif update.message.text.startswith('/ban'):
-        # Логика для бана пользователя
         if user_id in admin_ids:
             banned_user_id = update.message.text.split()[1]
             bot.kickChatMember(chat_id, banned_user_id)
@@ -30,7 +29,6 @@ def webhook():
             bot.sendMessage(chat_id, "У вас нет прав для выполнения этой команды.")
 
     elif update.message.text.startswith('/mute'):
-        # Логика для мьюта пользователя
         if user_id in admin_ids:
             muted_user_id = update.message.text.split()[1]
             bot.restrictChatMember(chat_id, muted_user_id, until_date=int(time.time() + 3600), can_send_messages=False)
