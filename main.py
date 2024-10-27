@@ -6,11 +6,11 @@ import time
 app = Flask(__name__)
 
 # Замените YOUR_TOKEN на токен вашего бота
-bot = telegram.Bot(token='YOUR_TOKEN')
+bot = telegram.Bot(token='7205262442:AAEq1LwYsUxN36qunpmwnwNx6_Qxz3Vk8qc')
 
 admin_ids = [12345678]  # Замените на ID администраторов
 
-@app.route('/' + 'YOUR_TOKEN', methods=['POST'])
+@app.route('/' + '7205262442:AAEq1LwYsUxN36qunpmwnwNx6_Qxz3Vk8qc', methods=['POST'])
 def webhook():
     update = telegram.Update.de_json(request.get_json(force=True), bot)
     chat_id = update.message.chat.id
